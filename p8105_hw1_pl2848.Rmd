@@ -1,0 +1,13 @@
+---
+title: "p8105_hw1_pl2848"
+author: "Pei Liu"
+date: "2022-09-23"
+output: html_document
+---
+
+# Problem 1
+Install a package containing the penguins dataset
+```{r}
+install.packages("palmerpenguins")
+```
+
