@@ -11,3 +11,8 @@ Install a package containing the penguins dataset
 install.packages("palmerpenguins")
 ```
 
+load the penguins dataset
+```{r}
+data("penguins", package = "palmerpenguins")
+```
+
