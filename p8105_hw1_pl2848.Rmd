@@ -59,4 +59,29 @@ mean(my_df$z)
 mean(my_df$h)
 ```
 
+or use pull() to calculate:
+```{r}
+for (i in 1:4) {
+mean <- my_df %>% 
+  pull(i) %>% 
+  mean()
+print(mean)
+}
+
+```
+
+**The above calculation shows that the means of numerical and logical can be calculated, while the means of character vector and factor vector can not be calculated.**
+
+Convert variables y, z, h from their original types to numeric type:
+```{r, echo = FALSE}
+as.numeric(my_df$y)
+as.numeric(my_df$z)
+as.numeric(my_df$h)
+```
+as.numeric() function convert other types of variables to numerical variables. Because, in logical variable y, 0 represent False and 1 represent TRUE. In factor vector h, each level is represented by numbers.
+
+This helps me to explain what happens when try to take the mean. We can only calculate means on numbers. Logical variables can convert to number 1 and 0; and factor vector can convert to number only when the level is number.
+
+*Noted that, for character vectors, we can only convert them to numeric variable when numbers are in the "". *
+
 
