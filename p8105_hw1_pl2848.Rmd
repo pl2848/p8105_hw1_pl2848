@@ -47,7 +47,16 @@ my_df = tibble(
   x = rnorm(10),
   y = x>0,
   z = "mailmansch",
-  h = c("red","blue","yellow","red","blue","blue","yellow","blue","red","blue")
+  h = factor(c("1","3","2","3","3","2","1","1","1","2"), levels = c("1", "2", "3"), labels = c("red", "blue", "green"))
 )
 ```
+
+Try to calculate means of each variables in my_df:
+```{r}
+mean(my_df$x)
+mean(my_df$y)
+mean(my_df$z)
+mean(my_df$h)
+```
+
 
