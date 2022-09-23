@@ -7,12 +7,31 @@ output: html_document
 
 # Problem 1
 Install a package containing the penguins dataset
-```{r}
-install.packages("palmerpenguins")
-```
 
 load the penguins dataset
 ```{r}
 data("penguins", package = "palmerpenguins")
 ```
 
+Get basic info of penguins data set:
+```{r}
+summary(penguins)
+```
+
+Calculate the mean of flipper length, rows and columns of penguins data set
+```{r}
+mean(penguins$flipper_length_mm, na.rm = TRUE)
+nrow(penguins)
+ncol(penguins)
+```
+
+# Short Description of the penguins data set:
+About this data set:
+
+ 1. Variables include species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex and year. The statistics are shown in the above chunk.
+ 
+ 2. There are 8 variables and 344 observations in this dataset.
+ 
+ 3. mean (flipper leangth) = 200.9152
+ 
+ 
