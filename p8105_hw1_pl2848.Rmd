@@ -25,7 +25,7 @@ nrow(penguins)
 ncol(penguins)
 ```
 
-## Short Description of the penguins data set:
+Short Description of the penguins data set:
 About this data set:
 
  1. Variables include species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex and year. The statistics are shown in the above chunk.

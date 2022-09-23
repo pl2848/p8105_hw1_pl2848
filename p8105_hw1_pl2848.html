@@ -414,6 +414,71 @@ dataset.</p></li>
 </ol>
 </div>
 </div>
+<div id="problem-2" class="section level1">
+<h1>Problem 2</h1>
+<p>Load the tidyverse library</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
+## ✔ ggplot2 3.3.6      ✔ purrr   0.3.4 
+## ✔ tibble  3.1.8      ✔ dplyr   1.0.10
+## ✔ tidyr   1.2.0      ✔ stringr 1.4.1 
+## ✔ readr   2.1.2      ✔ forcats 0.5.2 
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<p>Create a dataframe as instructed:</p>
+<pre class="r"><code>my_df = tibble(
+  x = rnorm(10),
+  y = x&gt;0,
+  z = &quot;mailmansch&quot;,
+  h = factor(c(&quot;1&quot;,&quot;3&quot;,&quot;2&quot;,&quot;3&quot;,&quot;3&quot;,&quot;2&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;2&quot;), levels = c(&quot;1&quot;, &quot;2&quot;, &quot;3&quot;), labels = c(&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;))
+)</code></pre>
+<p>Try to calculate means of each variables in my_df:</p>
+<pre class="r"><code>mean(my_df$x)</code></pre>
+<pre><code>## [1] -0.2136515</code></pre>
+<pre class="r"><code>mean(my_df$y)</code></pre>
+<pre><code>## [1] 0.4</code></pre>
+<pre class="r"><code>mean(my_df$z)</code></pre>
+<pre><code>## Warning in mean.default(my_df$z): argument is not numeric or logical: returning
+## NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre class="r"><code>mean(my_df$h)</code></pre>
+<pre><code>## Warning in mean.default(my_df$h): argument is not numeric or logical: returning
+## NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p>or use pull() to calculate:</p>
+<pre class="r"><code>for (i in 1:4) {
+mean &lt;- my_df %&gt;% 
+  pull(i) %&gt;% 
+  mean()
+print(mean)
+}</code></pre>
+<pre><code>## [1] -0.2136515
+## [1] 0.4</code></pre>
+<pre><code>## Warning in mean.default(.): argument is not numeric or logical: returning NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<pre><code>## Warning in mean.default(.): argument is not numeric or logical: returning NA</code></pre>
+<pre><code>## [1] NA</code></pre>
+<p><strong>The above calculation shows that the means of numerical and
+logical can be calculated, while the means of character vector and
+factor vector can not be calculated.</strong></p>
+<p>Convert variables y, z, h from their original types to numeric
+type:</p>
+<pre><code>##  [1] 0 1 1 0 0 0 0 1 1 0</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre><code>##  [1] NA NA NA NA NA NA NA NA NA NA</code></pre>
+<pre><code>##  [1] 1 3 2 3 3 2 1 1 1 2</code></pre>
+<p>as.numeric() function convert other types of variables to numerical
+variables. Because, in logical variable y, 0 represent False and 1
+represent TRUE. In factor vector h, each level is represented by
+numbers.</p>
+<p>This helps me to explain what happens when try to take the mean. We
+can only calculate means on numbers. Logical variables can convert to
+number 1 and 0; and factor vector can convert to number only when the
+level is number.</p>
+<p><em>Noted that, for character vectors, we can only convert them to
+numeric variable when numbers are in the ““. </em></p>
+</div>
 
 
 
