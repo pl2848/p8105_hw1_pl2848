@@ -25,7 +25,7 @@ nrow(penguins)
 ncol(penguins)
 ```
 
-# Short Description of the penguins data set:
+## Short Description of the penguins data set:
 About this data set:
 
  1. Variables include species, island, bill_length_mm, bill_depth_mm, flipper_length_mm, body_mass_g, sex and year. The statistics are shown in the above chunk.
@@ -34,4 +34,20 @@ About this data set:
  
  3. mean (flipper leangth) = 200.9152
  
- 
+
+# Problem 2
+Load the tidyverse library
+```{r}
+library(tidyverse)
+```
+
+Create a dataframe as instructed:
+```{r}
+my_df = tibble(
+  x = rnorm(10),
+  y = x>0,
+  z = "mailmansch",
+  h = c("red","blue","yellow","red","blue","blue","yellow","blue","red","blue")
+)
+```
+
